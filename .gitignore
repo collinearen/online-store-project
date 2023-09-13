@@ -4142,7 +4142,7 @@
 /venv/lib/python3.9/site-packages/pip/_vendor/webencodings/__init__.py
 /venv/lib/python3.9/site-packages/pip/_vendor/webencodings/labels.py
 /venv/lib/python3.9/site-packages/pip/_vendor/webencodings/mklabels.py
-/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/tests.py
+
 /venv/lib/python3.9/site-packages/pip/_vendor/webencodings/x_user_defined.py
 /venv/lib/python3.9/site-packages/pip/_vendor/__init__.py
 /venv/lib/python3.9/site-packages/pip/_vendor/six.py
@@ -4584,7 +4584,6 @@
 /venv/lib/python3.9/site-packages/PIL/SpiderImagePlugin.py
 /venv/lib/python3.9/site-packages/PIL/SunImagePlugin.py
 /venv/lib/python3.9/site-packages/PIL/TarIO.py
-/store/users/tests.py
 /venv/lib/python3.9/site-packages/PIL/TgaImagePlugin.py
 /venv/lib/python3.9/site-packages/PIL/TiffImagePlugin.py
 /venv/lib/python3.9/site-packages/PIL/TiffTags.py
