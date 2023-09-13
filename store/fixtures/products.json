@@ -1,0 +1,74 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Зерновой кофе “Арабика”",
+      "description": "100% арабика из Бразилии. Богатый и насыщенный вкус с нотами шоколада и карамели. Идеально подходит для приготовления эспрессо и капучино",
+      "price": "120",
+      "quantity": 5,
+      "image": "products_images/5f9f6abcb09e25c684cc65ccc9652377.jpg",
+      "category": 4
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Молотый кофе “Эспрессо”",
+      "description": "Смесь арабики и робусты из Африки и Центральной Америки. Обладает насыщенным вкусом и плотной крема. Идеально для приготовления классического эспрессо",
+      "price": "100",
+      "quantity": 1,
+      "image": "products_images/e04166d22c8dec31749262d795d0b655_QZzpi3k.jpeg",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Завтрак “Шведский стол”",
+      "description": "Большой выбор блюд на любой вкус: омлет с овощами, сосиски, каши, мюсли, фрукты и йогурт",
+      "price": "299",
+      "quantity": 4,
+      "image": "products_images/img_4451_ovV1vGb.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Обед “Гриль”",
+      "description": "Сочное мясо или рыба на гриле с гарниром из картофеля, салата и соуса на выбор",
+      "price": "699",
+      "quantity": 3,
+      "image": "products_images/restoran-spisok-krasnodar-restoranka1_M9PEapY.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Горячий шоколад “Сливочный”",
+      "description": "какао-бобы высшего качества, сливки и сахар, идеально для холодного времени года.",
+      "price": "199",
+      "quantity": 4,
+      "image": "products_images/1644992944_18-klublady-ru-p-goryachii-shokolad-foto-19_qbYAGos.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Печенье “Овсяное”",
+      "description": "Овсяные хлопья, мед и орехи, запеченные в духовке.",
+      "price": "199",
+      "quantity": 2,
+      "image": "products_images/1644915626_48-klublady-ru-p-krasivoe-ovsyanoe-pechene-foto-55_17.27.33.jpg",
+      "category": 3
+    }
+  }
+]
