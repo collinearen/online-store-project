@@ -1,21 +1,37 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect
+from django.views.generic import TemplateView, ListView
 
+from common.views import TitleMixin
 from products.models import Product, ProductCategory, Basket
 
 
-def index(request):
-    return render(request=request, template_name="products/index.html")
+class IndexView(TitleMixin, TemplateView):
+    template_name = "products/index.html"
+    name_store = 'Coffee Like'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data()
+        context['name_store'] = 'Coffee Like'
+        return context
 
 
-def products(request, category_id=None):
-    context = {
-        'name_store': "Coffee Lake",
-        'products': Product.objects.filter(category_id=category_id) if category_id else Product.objects.all(),
-        'categories': ProductCategory.objects.all(),
-    }
+class ProductsView(TitleMixin, ListView):
+    model = Product
+    template_name = "products/products.html"
+    paginate_by = 3
+    name_store = 'Coffee Like'
 
-    return render(request=request, template_name='products/products.html', context=context)
+    def get_queryset(self):
+        queryset = super(ProductsView, self).get_queryset()
+        category_id = self.kwargs.get('category_id')
+        return queryset.filter(category_id=category_id) if category_id else queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ProductsView, self).get_context_data()
+        context['name_store'] = 'Каталог'
+        context['categories'] = ProductCategory.objects.all()
+        return context
 
 
 @login_required
