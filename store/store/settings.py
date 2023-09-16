@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.vk',
 ]
 
 MIDDLEWARE = [
@@ -150,10 +151,18 @@ EMAIL_USE_SSL = True
 # <-- OAuth -->
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend'
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 SITE_ID = 2
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {'SCOPE': ['user'], },
+    'vk': {
+        'APP': {
+            'client_id': '51750600',
+            'secret': 'JLL1zqQSJBhAZrGAkzH8 Key',
+            'key': 'ac5b2b70ac5b2b70ac5b2b7088af4e8db8aac5bac5b2b70c95ebda830b2a017b405067e',
+
+        }
+    },
 }
