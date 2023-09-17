@@ -10,8 +10,10 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('', include('products.urls', namespace='products')),
     path('accounts/', include('allauth.urls')),
-    path('users/', include('users.urls', namespace='users'))
+    path('users/', include('users.urls', namespace='users')),
+
 ]
 
 if settings.DEBUG:
+    urlpatterns.append(path("__debug__/", include("debug_toolbar.urls")))
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

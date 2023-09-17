@@ -18,6 +18,15 @@ class IndexViewTestCase(TestCase):
         self.assertEqual(response.context_data['name_store'], "Coffee Like")
 
 
+class ProductsListViewTestCase(TestCase):
+    def test_list(self):
+        path = reverse('products:index')
+        response = self.client.get(path)
+
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.context_data['name_store'], "Coffee Like")
+
+
 if __name__ == '__main__':
-    h1 = IndexViewTestCase
-    h1.test_view()
+    IndexViewTestCase.test_view()
+    ProductsListViewTestCase.test_list()

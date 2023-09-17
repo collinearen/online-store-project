@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'users.apps.UsersConfig',
     'django.contrib.sites',
+    'debug_toolbar',
 
     'allauth',
     'allauth.account',
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'store.urls'
@@ -79,21 +81,38 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'store.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+INTERNAL_IPS = [
+    'localhost',
+    '127.0.0.1',
+
+]
+
+# <--- DATABASES --->
+
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'CoffeeDB',
-        "USER": 'postgres',
-        "PASSWORD": '0000',
-        "HOST": '127.0.0.1',
-        "PORT": '5432',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'CoffeeDB',
+        'USER': 'postgres',
+        'PASSWORD': '0000',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -140,13 +159,12 @@ LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL = '/', '/'
 
 # <-- EMAIL YANDEX-->
-'''
+
 EMAIL_HOST = 'smtp.yandex.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'b4ng-b4ngacc@yandex.ru'
 EMAIL_HOST_PASSWORD = '291101Daniil'
 EMAIL_USE_SSL = True
-'''
 
 # <-- OAuth -->
 AUTHENTICATION_BACKENDS = (
@@ -166,3 +184,7 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     },
 }
+
+#  <---  CELERY  --->
+
+CELERY_BROKER_URL, CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379', 'redis://127.0.0.1:6379'
