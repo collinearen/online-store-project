@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'products.apps.ProductsConfig',
     'users.apps.UsersConfig',
-    'orders.apps.OrdersConfig'
+    'orders.apps.OrdersConfig',
     'django.contrib.sites',
     'debug_toolbar',
+    'django.contrib.humanize',
 
     'allauth',
     'allauth.account',
